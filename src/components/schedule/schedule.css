@@ -6,7 +6,6 @@
   width: 100%;
   top:0px;
   left:0px;
-  text-align: center;
 } 
 .scheduleMain {
   position: relative;
@@ -47,15 +46,4 @@
   text-align: left;
   padding-left: 30px;
   display: flex; justify-content: flex-start; align-items: center;
-}
-.scPrintButton {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  background-color: yellow;
-  padding: 10px;
-  cursor: pointer;
-}
-#toPrint {
-  margin-left: 10px;
 }

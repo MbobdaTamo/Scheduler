@@ -102,7 +102,6 @@
                 <a class="boutton" @click="getSceance1('ajouter',0)" >Ajouter</a>
             </div>
         </div>
-
     </div>
 	<footer class="shadow bg-light text-center text-lg-start font-monospace fw-bold fixed-bottom">
 		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">© 2022 Copyright: <a class="text-dark" href="#">TheSavoir</a></div>

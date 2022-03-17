@@ -15,30 +15,27 @@
                 <option @click="currentSelect(current.id)" v-for="(current, index) in currents" :key="index">{{ current.nom }}</option>
             </select>
         </div>
-        <section id="toPrint" style="width:1330px; text-align:center">
-            <h2>{{ current }} planning  {{annee}}/{{parseInt(annee)+1}}</h2>
-            <div class="scheduleMain">
-                <div class="scDays">
-                    <div id="scVoidDay"><span></span></div>
-                    <div v-for="(day, index) in days" :key="index"><span>{{ day }}</span></div>
-                </div>
-                <div class="scHours">
-                    <div  v-for="(hour, index) in hours" :key="index">{{hour}}h</div>
-                </div>
-                <BlueTextBox v-for="(sceance, index) in sceance" :key="index" 
-                    :nom="sceance.nom"
-                    :classe="sceance.classeNom"
-                    :enseignant="sceance.enseignantNom"
-                    :salle="sceance.salleNom"
-                    :debut="toHour(sceance.heure_debut)"
-                    :fin="toHour(sceance.heure_fin)"
-                    :positionX="jourToX[sceance.jour]"
-                    :positionY="sceance.heure_debut/60-7"
-                    :height ="(sceance.heure_fin - sceance.heure_debut)/60"
-                />
+        <h2>{{ current }} - {{annee}}/{{annee+1}}</h2>
+        <div class="scheduleMain">
+            <div class="scDays">
+                <div id="scVoidDay"><span></span></div>
+                <div v-for="(day, index) in days" :key="index"><span>{{ day }}</span></div>
             </div>
-        </section>
-        <div @click="print" class="scPrintButton">PRINT</div>
+            <div class="scHours">
+                <div  v-for="(hour, index) in hours" :key="index">{{hour}}</div>
+            </div>
+            <BlueTextBox v-for="(sceance, index) in sceance" :key="index" 
+                :nom="sceance.nom"
+                :classe="sceance.classe"
+                :enseignant="sceance.enseignant"
+                :salle="sceance.salle"
+                :debut="toHour(sceance.heure_debut)"
+                :fin="toHour(sceance.heure_fin)"
+                :positionX="jourToX[sceance.jour]"
+                :positionY="sceance.heure_debut/60-7"
+                :height ="(sceance.heure_fin - sceance.heure_debut)/60"
+            />
+        </div>
     </div>
 </template>
 <style src="./schedule.css">
