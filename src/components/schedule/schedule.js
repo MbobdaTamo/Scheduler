@@ -1,4 +1,5 @@
 import BlueTextBox from './BlueTextBox.vue'
+
 export default {
   name: 'schedule',
   components: {
