@@ -1,0 +1,19 @@
+.main {
+
+}
+.mainOption {
+  display: flex;
+}
+.mainOption > div {
+  width: 25%;
+  text-align: center;
+}
+
+
+.mainOption + div {
+  margin-top: 60px;
+  text-align: center;
+}
+.boutton:hover {
+  opacity: 0.5;
+}

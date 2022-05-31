@@ -1,0 +1,46 @@
+.amphi {
+  display: flex; justify-content: center; align-items: center;
+  flex-direction: column;
+}
+.amphOption {
+  width: 600px;
+  display: flex; justify-content: center; align-items: center;
+  border-top: solid 1px;
+  border-left: solid 1px;
+  text-align: center;
+  flex-direction: column;
+  border-top-right-radius: 0.7em;
+  border-top-left-radius: 0.7em;
+}
+.amphElement {
+  width: 100%;
+  display: flex;
+  border-bottom: solid 1px;
+  border-top-right-radius: 0.7em;
+  border-top-left-radius: 0.7em;
+}
+.amphElement > span {
+  width: 200px;
+  padding: 15px;
+  border-right: solid 1px;
+}
+.amphElement img {
+  width: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.amphOption + div {
+  margin-top: 60px;
+  text-align: center;
+}
+.amphTH {
+  border-top-right-radius: 0.7em;
+  border-top-left-radius: 0.7em;
+  background-color: gray;
+}
+.amphTHL {
+  border-top-right-radius: 0.7em;
+  border-top-left-radius: 0.7em;
+}
