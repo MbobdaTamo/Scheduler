@@ -2,11 +2,11 @@ export default {
   name: 'amphForm',
   data () {
     return {
-      Display: 'block',
+      Display: 'none',
       publiTitle: '',
       publiContent: '',
       role: 'Ajouter',
-      caller: null
+      caller: {}
     }
   },
   methods: {
@@ -35,7 +35,7 @@ export default {
         })
           .then(() => {
             this.$emit('added')
-            this.hide()
+            // this.hide()
           })
           .catch((error) => {
             alert(error)

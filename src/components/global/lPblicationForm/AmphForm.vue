@@ -4,10 +4,10 @@
         <div class="lPBFCCross" @click="hide()"><img src="./more.svg"/></div>
     </div>
     <div class="lPBFCBody">
-            <div class="lPBFCType"><span>Type publication</span><div><LDropDown ref='types' :datas="this.$store.state.publiTypeDatas" maxHeight="680%" maxWidth="180px" /></div></div>
+            <div class="lPBFCType"><span>Type publication</span></div>
             <div><textarea v-model="publiTitle" placeholder="nom/code"></textarea> </div>
             <div class="input"><input type="number" v-model="publiContent" placeholder="Nombre de place"></div>
-            <div @click='publishing' >{{ role }}</div>
+            <div class="lPBFCButton" @click='publishing' >{{ role }}</div>
     </div>
 </section>
 </template>

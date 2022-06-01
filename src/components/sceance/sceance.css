@@ -1,0 +1,73 @@
+.sceance {
+  display: flex; justify-content: center; align-items: center;
+  flex-direction: column;
+}
+.sceanceSelect {
+  width: 100%;
+  display: flex;
+}
+.sceanceSelect span {
+  display: flex;justify-content: center; align-items: center;
+  margin-right: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  color: rgb(40,40,40);
+}
+.sceanceSelect select {
+  box-sizing: border-box;
+  width: 120px;
+  height: 40px;
+  padding: 5px;
+  font-weight: bold;
+  border: solid 2px rgb(223, 225, 230);
+  color: rgb(40,40,40);
+  margin-right: 20px;
+  border-radius: 0.1em;
+  font-size: 14px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.sceanceOption {
+  margin-top: 50px;
+  width: 1000px;
+  display: flex; justify-content: center; align-items: center;
+  border-top: solid 1px;
+  border-left: solid 1px;
+  text-align: center;
+  flex-direction: column;
+  border-top-right-radius: 0.7em;
+  border-top-left-radius: 0.7em;
+}
+.sceanceElement {
+  width: 100%;
+  display: flex;
+  font-size: 15px;
+  border-bottom: solid 1px;
+  border-top-right-radius: 0.7em;
+  border-top-left-radius: 0.7em;
+}
+.sceanceElement > span {
+  width: 166.666px;
+  padding: 15px;
+  border-right: solid 1px;
+}
+.sceanceElement img {
+  width: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.sceanceOption + div {
+  margin-top: 60px;
+  text-align: center;
+}
+.sceanceTH {
+  border-top-right-radius: 0.7em;
+  border-top-left-radius: 0.7em;
+  background-color: gray;
+}
+.sceanceTHL {
+  border-top-right-radius: 0.7em;
+  border-top-left-radius: 0.7em;
+}

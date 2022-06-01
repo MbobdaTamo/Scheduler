@@ -1,13 +1,13 @@
 <template>
     <div class="main">
         <div class="mainOption">
-            <div><a href="salles">Salles</a></div>
-            <div><a href="classe">Classe</a></div>
-            <div><a href="enseignant">Enseignant</a></div>
-            <div><a href="cours">Cours</a></div>
+            <div><a class="boutton" href="salle">Salle</a></div>
+            <div><a class="boutton" href="classe">Classe</a></div>
+            <div><a class="boutton" href="enseignant">Enseignant</a></div>
+            <div><a class="boutton" href="sceance">Scéance</a></div>
         </div>
         <div>
-            <a class="boutton" href="Planning">Planning</a>
+            <a class="boutton" href="schedule">Planning</a>
         </div>
     </div>
 </template>

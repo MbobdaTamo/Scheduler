@@ -1,38 +1,38 @@
-import AmphForm from "@/components/global/lPblicationForm/AmphForm"
+import EnsForm from "@/components/global/lPblicationForm/EnsForm"
 export default {
   name: 'enseignant',
   data () {
     return {
-      amphi: []
+      enseignant: [] /* [{id:'',nom:'',prenom:'',grade:'',departemment:''}] */
     }
   },
   components: {
-    AmphForm
+    EnsForm
   },
   methods: {
-    formDisplay (type,amph) {
-      this.$refs.amphForm.displaying(type,amph)
+    formDisplay (type,ens) {
+      this.$refs.ensForm.displaying(type,ens)
     },
-    getAmphi () {
+    getEnseignant () {
       const axios = require('axios')
-      axios.post(this.$store.state.baseUrl + 'getAmphi.php', {
+      axios.post(this.$store.state.baseUrl + 'getEnseignant.php', {
       })
         .then((response) => {
-          this.amphi = response.data
+          this.enseignant = response.data
           console.log(response)
         })
         .catch((error) => {
           console.log(error)
         })
     },
-    deleteAmph (id) {
+    deleteEnseignant (id) {
       const axios = require('axios')
-      axios.post(this.$store.state.baseUrl + 'addAmphi.php', {
+      axios.post(this.$store.state.baseUrl + 'addEnseignant.php', {
         role: 'delete',
         id: id
       })
         .then(() => {
-          this.getAmphi()
+          this.getEnseignant()
         })
         .catch((error) => {
           alert(error)
@@ -40,6 +40,6 @@ export default {
     }
   },
   mounted () {
-    this.getAmphi()
+    this.getEnseignant()
   }
 }

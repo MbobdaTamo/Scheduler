@@ -8,6 +8,7 @@ input:focus, textarea:focus, select:focus{
     left: 50%;
     width: 500px;
     padding-bottom: 20px;
+    color: rgb(40,40,40);
     overflow: auto;
     margin-left: -250px;
     margin-top: -260px;
@@ -85,12 +86,20 @@ input:focus, textarea:focus, select:focus{
     font-size: 15px;
     resize: none;
 }
-.lPBFCType + div + div + div label {
-    display: flex;
-    justify-content: left;
-    align-items: center ;
+.lPblicationForm select {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    font-weight: bold;
+    border: solid 2px rgb(223, 225, 230);
+    color: rgb(40,40,40);
+    border-radius: 0.1em;
+    font-size: 15px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
 }
-.lPBFCType + div + div + div {
+.lPBFCButton {
     background-color: #E2E4E6;
     border-radius:0.4em;
     padding: 10px;
@@ -101,7 +110,7 @@ input:focus, textarea:focus, select:focus{
 .lPBFCType + div + div label {
     cursor: pointer;
 }
-.lPBFCType + div + div + div:hover, .lPBFCCross:hover {
+.lPBFCButton:hover, .lPBFCCross:hover {
     cursor: pointer;
     background-color: rgb(175, 172, 172);
 }
