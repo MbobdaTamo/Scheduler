@@ -35,7 +35,7 @@ export default {
         })
           .then(() => {
             this.$emit('added')
-            // this.hide()
+            this.hide()
           })
           .catch((error) => {
             alert(error)

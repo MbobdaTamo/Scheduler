@@ -1,5 +1,5 @@
 .sceance {
-  display: flex; justify-content: center; align-items: center;
+  display: flex; justify-content: center; align-items:flex-start;
   flex-direction: column;
 }
 .sceanceSelect {
@@ -22,10 +22,22 @@
   border: solid 2px rgb(223, 225, 230);
   color: rgb(40,40,40);
   margin-right: 20px;
-  border-radius: 0.1em;
+  border-radius: 0em;
   font-size: 14px;
   -moz-appearance: none;
   -webkit-appearance: none;
+}
+.sceanceSelect2 {
+  margin-top: 5px;
+}
+.sceanceSelect2 select {
+  border-radius: 0.5em;
+  background-color: rgb(226, 52, 52);
+}
+.sceanceButton {
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
 }
 .sceanceOption {
   margin-top: 50px;
@@ -47,21 +59,23 @@
   border-top-left-radius: 0.7em;
 }
 .sceanceElement > span {
-  width: 166.666px;
+  width: 125px;
   padding: 15px;
   border-right: solid 1px;
 }
 .sceanceElement img {
   width: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   cursor: pointer;
 }
-
-.sceanceOption + div {
-  margin-top: 60px;
-  text-align: center;
+.sceanceAdd {
+  margin-top: 20px;
+  border-radius: 0.5em;
+  border: solid 1px;
+  padding: 5px
 }
+
 .sceanceTH {
   border-top-right-radius: 0.7em;
   border-top-left-radius: 0.7em;
