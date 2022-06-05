@@ -55,9 +55,9 @@
                 <span>{{ am.description }}</span>
                 <span>{{ toHour(am.heure_debut)}}</span>
                 <span>{{ toHour(am.heure_fin) }}</span>
-                <span>{{ am.classe }}</span>
-                <span>{{ am.salle }}</span>
-                <span>{{ am.enseignant }}</span>
+                <span>{{ am.classeNom }}</span>
+                <span>{{ am.salleNom }}</span>
+                <span>{{ am.enseignantNom }}</span>
                 <span>
                     <img @click="formDisplay('modifier',am,0)" src="./images/pencil.svg"/>
                     <img @click="deleteSceance(am.id)" src="./images/cross.svg"/>

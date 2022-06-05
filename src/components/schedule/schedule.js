@@ -1,4 +1,5 @@
 import BlueTextBox from './BlueTextBox.vue'
+import html2pdf from 'html2pdf.js'
 export default {
   name: 'schedule',
   components: {
@@ -20,10 +21,21 @@ export default {
       triePar:'',
       current:'',
       currents:[],
-      currentId:0
+      currentId:0,
     }
   },
   methods: {
+    print () {
+      let element = document.getElementById('toPrint')
+      var opt = {
+        margin:       1,
+        filename:     'myfile.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, width:1366, windowWidth:1366 },
+        jsPDF:        { unit: 'in', format: 'a3', orientation: 'portrait' }
+      }
+      html2pdf().from(element).set(opt).save()
+    },
     getClasse () {
       const axios = require('axios')
       axios.post(this.$store.state.baseUrl + 'getClasse.php', {

@@ -5,7 +5,7 @@ export default {
   data () {
     return {
       years:['2022','2023','2024','2025','2027'],
-      jours:['Lundi','Mardi','Mercredi','Jeudi','Vendredi','samedi','dimanche'],
+      jours:['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'],
       amphis: [],
       classes: [],
       enseignants: [],
@@ -90,6 +90,7 @@ export default {
       })
         .then((response) => {
           this.sceance = response.data
+          console.log(response.data)
         })
         .catch((error) => {
           console.log(error)
