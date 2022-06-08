@@ -9,15 +9,16 @@
   },
   "dependencies": {
     "@grafikri/vue-middleware": "^1.0.0",
+    "array-uniq": "^3.0.0",
     "axios": "^0.27.2",
     "core-js": "^3.6.5",
     "html2pdf": "^0.0.11",
     "html2pdf.js": "^0.10.1",
     "jspdf": "^2.5.1",
-    "vue": "^3.0.0",
-    "vue-html2pdf": "^1.8.0",
     "mdb-vue-ui-kit": "^1.14.0",
     "typewriter-vue": "",
+    "vue": "^3.0.0",
+    "vue-html2pdf": "^1.8.0",
     "vue-router": "4",
     "vue3-html2pdf": "^1.1.2",
     "vuex": "^4.0.2"
