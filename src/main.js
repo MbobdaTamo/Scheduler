@@ -4,6 +4,9 @@ import router from './router'
 import { createStore } from 'vuex'
 import middleware from '@grafikri/vue-middleware'
 import { facebookDate } from './plugins/facebookDate'
+import 'mdb-vue-ui-kit/css/mdb.min.css';
+import 'mdb-vue-ui-kit/css/mdb.rtl.min.css';
+
 
 const app = createApp(App)
 // Create a new store instance.
