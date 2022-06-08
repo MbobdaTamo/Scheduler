@@ -11,12 +11,12 @@
                 <option  v-for="(triePar, index) in triePars" :key="index">{{ triePar }} </option>
             </select>
             <span>:</span>
-            <select v-model="current">
-                <option @click="currentSelect(current.id)" v-for="(current, index) in currents" :key="index">{{ current.nom }}</option>
+            <select @change="currentSelect" v-model="current">
+                <option :value="current.id+'@---&=@'+current.nom" v-for="(current, index) in currents" :key="index">{{ current.nom }}</option>
             </select>
         </div>
         <section id="toPrint" style="width:1330px; text-align:center">
-            <h2>{{ current }} planning  {{annee}}/{{parseInt(annee)+1}}</h2>
+            <h2>{{ currentNom }} planning  {{annee}}/{{parseInt(annee)+1}}</h2>
             <div class="scheduleMain">
                 <div class="scDays">
                     <div id="scVoidDay"><span></span></div>

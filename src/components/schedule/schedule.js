@@ -22,6 +22,7 @@ export default {
       current:'',
       currents:[],
       currentId:0,
+      currentNom:''
     }
   },
   methods: {
@@ -81,7 +82,6 @@ export default {
       })
         .then((response) => {
           this.sceance = response.data
-          console.log(response.data)
         })
         .catch((error) => {
           console.log(error)
@@ -93,8 +93,10 @@ export default {
       else if(this.current == 'salle') this.currents = this.salles
       else this.currents = this.enseignants
     },
-    currentSelect (id) {
-      this.currentId = id
+    currentSelect (event) {
+      let text = event.target.value.split('@---&=@')
+      this.currentNom = text[1]
+      this.currentId = text[0]
       this.getSceance()
     },
     toHour(minutes) {
