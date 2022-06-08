@@ -1,5 +1,5 @@
 import BlueTextBox from './BlueTextBox.vue'
-import html2pdf from 'html2pdf.js'
+
 export default {
   name: 'schedule',
   components: {

@@ -63,11 +63,11 @@
 					<tr v-for="(am, index) in sceance" :key="index" class="table-primary">
 						<td><p class="fw-bold mb-1">{{ am.nom }}</p></td>
 						<td><p class="fw-normal mb-1">{{ am.description }}</p></td>
-						<td><p class="fw-normal mb-1">{{ toHour(am.heure_debut) }}</p></td>
 						<td><p class="fw-normal mb-1">{{ toHour(am.heure_fin) }}</p></td>
-						<td><p class="fw-normal mb-1">{{ am.classe }}</p></td>
-						<td><p class="fw-normal mb-1">{{ am.salle }}</p></td>
-						<td><p class="fw-normal mb-1">{{ am.enseignant }}</p></td>
+						<td><p class="fw-normal mb-1">{{ toHour(am.heure_debut) }}</p></td>
+						<td><p class="fw-normal mb-1">{{ am.classeNom }}</p></td>
+						<td><p class="fw-normal mb-1">{{ am.salleNom }}</p></td>
+						<td><p class="fw-normal mb-1">{{ am.enseignantNom }}</p></td>
 						<td>
 							<img style="width: 20px; height: 20px" @click="formDisplay('modifier',am)" src="./images/pencil.svg"/>
 							<img style="width: 20px; height: 20px" @click="deleteSceance(am.id)" src="./images/cross.svg"/>
@@ -102,7 +102,6 @@
                 <a class="boutton" @click="getSceance1('ajouter',0)" >Ajouter</a>
             </div>
         </div>
-
     </div>
 	<footer class="shadow bg-light text-center text-lg-start font-monospace fw-bold fixed-bottom">
 		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">© 2022 Copyright: <a class="text-dark" href="#">TheSavoir</a></div>
