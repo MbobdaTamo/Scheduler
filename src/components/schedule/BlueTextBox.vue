@@ -1,10 +1,10 @@
 <template>
       <div class="blueTextBox" :style="{left:toPxX(positionX), top:toPxY(positionY), height:toPxH(height)}">
           <div>
-            <div>{{ nom }}</div>
+            <div style="font-weight:bold">{{ nom }}</div>
             <div>{{ classe }} /salle:{{ salle }}</div>
-            <div>{{ enseignant }}</div>
-            <div class="bltbDate">{{ debut }}H - {{ fin }}H </div>
+            <div>prof: {{ enseignant }}</div>
+            <div class="bltbDate">{{ debut }} - {{ fin }} </div>
           </div>
       </div>
 </template>
@@ -16,8 +16,7 @@
         position: absolute;
         width:13.5%;
         box-sizing: border-box;
-        padding-bottom: 2px;
-        padding-right: 2px;
+        padding: 2px;
     }
     .blueTextBox > div {
       box-sizing: border-box;
