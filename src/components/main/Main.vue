@@ -18,9 +18,7 @@
 	<div class="text-center p-5 m-5">
 		<blockquote class="blockquote">
 			<h1 class="display-4 pt-5 text-black-50 font-monospace fw-bold" id="typing">
-				<typewriter :replace="replace" :type-interval="100" :replace-interval="1000">
-					<div class="font-monospace">Scheduler is awesome!!</div>
-				</typewriter>
+				<div class="font-monospace">Scheduler is awesome!!</div>
 			</h1>
 		</blockquote>
 		<figcaption class="fw-light blockquote-footer font-monospace">Instantly schedule school activities</figcaption>
