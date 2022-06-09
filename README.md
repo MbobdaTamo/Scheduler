@@ -1,4 +1,4 @@
-# blw-casino
+# Scheduler 
 
 ## Project setup
 ```
