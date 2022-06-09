@@ -38,7 +38,7 @@
 			</form>
 		</div>
         <div class="shadow font-monospace text-center me-5 ms-5 mb-0">
-			<div>
+			<div class="pb-3">
 				<span class="fw-bold">Ajouter Scéance</span>
 				<form class="p-5 m-5 pt-3 mb-0 row row-cols-lg-auto form-outline sceanceSelect sceanceSelect2 font-monospace">
 					<span>classe:</span>
@@ -58,9 +58,9 @@
 					</select>
 				</form>
 			</div>
-            <div class="text-center pb-3">
-                <a class="bg-primary text-white btn-lg fw-bold" @click="getSceance1('ajouter',0)" >Ajouter</a>
-            </div>
+			<div class="pb-5">
+				<a class="shadow-lg font-monospace fw-bold btn btn-primary btn-lg hidden-sm hidden-xs" @click="getSceance1('ajouter',0)" >Ajouter</a>
+			</div>
         </div>
     </div>
 

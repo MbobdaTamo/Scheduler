@@ -61,6 +61,10 @@
         <a class="shadow-lg font-monospace fw-bold btn btn-primary btn-lg hidden-sm hidden-xs" @click="formDisplay('ajouter',0)" >Ajouter</a>
     </div>
     <ClassForm @added="getEnseignant" ref="ensForm"/>
+
+	<footer class="shadow bg-light text-center text-lg-start font-monospace fw-bold fixed-bottom">
+		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">© 2022 Copyright: <a class="text-dark" href="#">TheSavoir</a></div>
+	</footer>
 </template>
 <style src="./enseignant.css">
 </style>
