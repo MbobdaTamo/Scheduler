@@ -11,7 +11,7 @@ export default {
   },
   methods: {
     formDisplay (type,ens) {
-      this.$refs.ensForm.displaying(type,ens)
+      this.$refs.classForm.displaying(type,ens)
     },
     getEnseignant () {
       const axios = require('axios')
@@ -31,7 +31,8 @@ export default {
         role: 'delete',
         id: id
       })
-        .then(() => {
+        .then((response) => {
+          console.log(response.data)
           this.getEnseignant()
         })
         .catch((error) => {

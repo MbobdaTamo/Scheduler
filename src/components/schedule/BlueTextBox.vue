@@ -17,6 +17,7 @@
         width:13.5%;
         box-sizing: border-box;
         padding: 2px;
+        color:white
     }
     .blueTextBox > div {
       box-sizing: border-box;
@@ -29,7 +30,8 @@
       z-index: 1;
     }
     .bltbDate {
-      color:red
+      color:orange;
+      font-weight: bold;
     }
 </style>
 <script>

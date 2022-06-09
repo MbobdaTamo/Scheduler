@@ -53,7 +53,7 @@ export default {
         this.$refs.yAlert.display('heure de fin supérieur ou égale à heure de début')
         return
       }
-      if(this.timeFree() || this.role == 'Modifier') {
+      if(this.role == 'Modifier' || this.timeFree()) {
         this.publishing()
       }
     },

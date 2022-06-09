@@ -24,43 +24,28 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="table-primary">
-					<td>Example</td>
-					<td>Example</td>
-					<td>Example</td>
-					<td>Example</td>
-					<td>
-						<img style="width: 20px; height: 20px" @click="formDisplay('modifier',am)" src="./images/pencil.svg"/>
-						<img style="width: 20px; height: 20px" @click="deleteClasse(am.id)" src="./images/cross.svg"/>
-					</td>
-				</tr>
-				<tr class="table-primary">
-					<td>Example</td>
-					<td>Example</td>
-					<td>Example</td>
-					<td>Example</td>
-					<td>
-						<img style="width: 20px; height: 20px" @click="formDisplay('modifier',am)" src="./images/pencil.svg"/>
-						<img style="width: 20px; height: 20px" @click="deleteClasse(am.id)" src="./images/cross.svg"/>
-					</td>
-				</tr>
 				<tr v-for="(am, index) in enseignant" :key="index" class="table-primary">
 					<td><p class="fw-bold mb-1">{{ am.nom }}</p></td>
 					<td><p class="fw-normal mb-1">{{ am.prenom }}</p></td>
 					<td><p class="fw-normal mb-1">{{ am.grade }}</p></td>
 					<td><p class="fw-normal mb-1">{{ am.departement }}</p></td>
 					<td>
-						<img style="width: 20px; height: 20px" @click="formDisplay('modifier',am)" src="./images/pencil.svg"/>
+						<img style="width: 20px; margin-right:20px; height: 20px" @click="formDisplay('modifier',am)" src="./images/pencil.svg"/>
 						<img style="width: 20px; height: 20px" @click="deleteEnseignant(am.id)" src="./images/cross.svg"/>
 					</td>
 				</tr>
 			</tbody>
 		</table>
-	</div>
-    <div class="text-center">
+
+    <div class="text-center" style="margin-top:50px">
         <a class="shadow-lg font-monospace fw-bold btn btn-primary btn-lg hidden-sm hidden-xs" @click="formDisplay('ajouter',0)" >Ajouter</a>
     </div>
-    <ClassForm @added="getEnseignant" ref="ensForm"/>
+	</div>
+    <EnsForm @added="getEnseignant" ref="classForm"/>
+
+	<footer class="shadow bg-light text-center text-lg-start font-monospace fw-bold fixed-bottom">
+		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">© 2022 Copyright: <a class="text-dark" href="#">TheSavoir</a></div>
+	</footer>
 </template>
 <style src="./enseignant.css">
 </style>

@@ -24,42 +24,22 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="table-primary">
-					<td>Example</td>
-					<td>Example</td>
-					<td>Example</td>
-					<td>Example</td>
-					<td>
-						<img style="width: 20px; height: 20px" @click="formDisplay('modifier',am)" src="./images/pencil.svg"/>
-						<img style="width: 20px; height: 20px" @click="deleteClasse(am.id)" src="./images/cross.svg"/>
-					</td>
-				</tr>
-				<tr class="table-primary">
-					<td>Example</td>
-					<td>Example</td>
-					<td>Example</td>
-					<td>Example</td>
-					<td>
-						<img style="width: 20px; height: 20px" @click="formDisplay('modifier',am)" src="./images/pencil.svg"/>
-						<img style="width: 20px; height: 20px" @click="deleteClasse(am.id)" src="./images/cross.svg"/>
-					</td>
-				</tr>
 				<tr v-for="(am, index) in classe" :key="index" class="table-primary">
 					<td><p class="fw-bold mb-1">{{ am.nom }}</p></td>
 					<td><p class="fw-normal mb-1">{{ am.effectif }}</p></td>
 					<td><p class="fw-normal mb-1">{{ am.departement }}</p></td>
 					<td><p class="fw-normal mb-1">{{ am.niveau }}</p></td>
 					<td>
-						<img style="width: 20px; height: 20px" @click="formDisplay('modifier',am)" src="./images/pencil.svg"/>
+						<img style="width: 20px; margin-right:20px; height: 20px" @click="formDisplay('modifier',am)" src="./images/pencil.svg"/>
 						<img style="width: 20px; height: 20px" @click="deleteClasse(am.id)" src="./images/cross.svg"/>
 					</td>
 				</tr>
 			</tbody>
 		</table>
-	</div>
-    <div class="text-center">
+    <div class="text-center" style="margin-top:20px">
         <a class="shadow-lg font-monospace fw-bold btn btn-primary btn-lg hidden-sm hidden-xs" @click="formDisplay('ajouter',0)" >Ajouter</a>
     </div>
+	</div>
     <ClassForm @added="getClasse" ref="classForm"/>
 
 	<footer class="shadow bg-light text-center text-lg-start font-monospace fw-bold fixed-bottom">

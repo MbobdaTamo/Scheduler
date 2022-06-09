@@ -11,40 +11,60 @@
 			</div>
 		</div>
 	</nav>
-    <div>
-			<form class="text-center pt-5 ms-5 me-5">
-				<div class="row row-cols-lg-auto g-3 form-outline">
-					<span>Année: </span>
-					<select class="form-select form-select-sm" style="width: 80px;" @change="getSceance" v-model="annee">
-						<option v-for="(year, index) in years" :key="index">{{ year }}</option>
-					</select>
-					<select class="form-select" style="width: 80px" @change="getSceance" v-model="semestre">
-						<option>SEMESTRE1</option>
-						<option>SEMESTRE2</option>
-					</select>
-				</div>
+    <div class="pt-3 ps-0">
+		<div class="text-center shadow me-5 ms-5 mb-4">
+			<form class="p-5 m-5 pt-3 mb-0 row row-cols-lg-auto form-outline sceanceSelect sceanceSelect2 font-monospace">
+				<span>Année: </span>
+				<select class="bg-primary text-white shadow" @change="getSceance" v-model="annee">
+					<option v-for="(year, index) in years" :key="index">{{ year }}</option>
+				</select>
+				<select class="bg-primary text-white shadow" change="getSceance" v-model="semestre">
+					<option>SEMESTRE1</option>
+					<option>SEMESTRE2</option>
+				</select>
+				<span>Jour: </span>
+				<select class="bg-primary text-white shadow" @change="getSceance" style="width: 80px" v-model="jour">
+					<option v-for="(jour, index) in jours" :key="index">{{ jour }}</option>
+				</select>
+				<span>Trier par: </span>
+				<select class="bg-primary text-white shadow" @change="trieSelect" v-model="triePar">
+					<option  v-for="(triePar, index) in triePars" :key="index">{{ triePar }} </option>
+				</select>
+				<span>:</span>
+				<select class="bg-primary text-white shadow" v-model="current">
+					<option @click="currentSelect('.+')">Tout </option>
+					<option @click="currentSelect(current.id)" v-for="(current, index) in currents" :key="index">{{ current.nom }}</option>
+				</select>
 			</form>
-			<form>
-				<div class="form-outline mb-4">
-					<span>Jour:</span>
-					<select class="form-select" @change="getSceance" v-model="jour">
-						<option v-for="(jour, index) in jours" :key="index">{{ jour }}</option>
+		</div>
+        <div class="shadow font-monospace text-center me-5 ms-5 mb-0">
+			<div class="pb-3">
+				<span class="fw-bold">Ajouter Scéance</span>
+				<form class="p-5 m-5 pt-3 mb-0 row row-cols-lg-auto form-outline sceanceSelect sceanceSelect2 font-monospace">
+					<span>classe:</span>
+					<select class="bg-primary text-white shadow" v-model="classe">
+						<option @click="classSelect(0,'Toutes')">Toutes</option>
+						<option @click="classSelect(classe.id,classe.nom+' ('+classe.effectif+ ' places)')" v-for="(classe, index) in classes" :key="index">{{ classe.nom }} ({{ classe.effectif }} places)</option>
 					</select>
-				</div>
-				<div>
-					<span>Trier par:</span>
-					<select class="form-select" @change="trieSelect" v-model="triePar">
-						<option  v-for="(triePar, index) in triePars" :key="index">{{ triePar }} </option>
+					<span>Salle:</span>
+					<select class="bg-primary text-white shadow" v-model="salle">
+						<option @click="salleSelect(0,'Toutes')">Toutes</option>
+						<option @click="salleSelect(salle.id,salle.nom+ ' ('+salle.capacite+ ' places)')" v-for="(salle, index) in salles" :key="index">{{ salle.nom }} ({{ salle.capacite }} places)</option>
 					</select>
-					<span>:</span>
-					<select class="form-select" v-model="current">
-						<option @click="currentSelect('.+')">Tout </option>
-						<option @click="currentSelect(current.id)" v-for="(current, index) in currents" :key="index">{{ current.nom }}</option>
+					<span>Enseignant:</span>
+					<select class="bg-primary text-white shadow" v-model="enseignant" >
+						<option @click="ensSelect(0,'Tous')">Tous</option>
+						<option @click="ensSelect(enseignant.id,enseignant.nom)" v-for="(enseignant, index) in enseignants" :key="index" >{{ enseignant.nom }}</option>
 					</select>
-				</div>
-			</form>
+				</form>
+			</div>
+			<div class="pb-5">
+				<a class="shadow-lg font-monospace fw-bold btn btn-primary btn-lg hidden-sm hidden-xs" @click="getSceance1('ajouter',0)" >Ajouter</a>
+			</div>
+        </div>
+    </div>
 
-		<div class="font-monospace p-5 m-5">
+		<div class="font-monospace p-5 m-5 mt-1">
 			<h1 class="display-5 fw-bold">Courses</h1>
 			<table class="shadow-lg table table-hover align-middle mb-0 bg-white">
 				<thead class="bg-light">
@@ -63,13 +83,13 @@
 					<tr v-for="(am, index) in sceance" :key="index" class="table-primary">
 						<td><p class="fw-bold mb-1">{{ am.nom }}</p></td>
 						<td><p class="fw-normal mb-1">{{ am.description }}</p></td>
-						<td><p class="fw-normal mb-1">{{ toHour(am.heure_fin) }}</p></td>
 						<td><p class="fw-normal mb-1">{{ toHour(am.heure_debut) }}</p></td>
+						<td><p class="fw-normal mb-1">{{ toHour(am.heure_fin) }}</p></td>
 						<td><p class="fw-normal mb-1">{{ am.classeNom }}</p></td>
 						<td><p class="fw-normal mb-1">{{ am.salleNom }}</p></td>
 						<td><p class="fw-normal mb-1">{{ am.enseignantNom }}</p></td>
 						<td>
-							<img style="width: 20px; height: 20px" @click="formDisplay('modifier',am)" src="./images/pencil.svg"/>
+							<img style="width: 20px; margin-right:20px; height: 20px" @click="getSceance1('modifier',am)" src="./images/pencil.svg"/>
 							<img style="width: 20px; height: 20px" @click="deleteSceance(am.id)" src="./images/cross.svg"/>
 						</td>
 					</tr>
@@ -79,30 +99,6 @@
         <SceanceForm @added="getSceance" @onPublish="onPublish" ref="sceanceForm"/>
         <YAlert ref="yAlert" type = "danger"/>
 
-        <div class="sceanceAdd">
-            <span>Ajouter Scéance</span>
-            <div class="sceanceSelect sceanceSelect2">
-                <span>classe:</span>
-                <select v-model="classe">
-                    <option @click="classSelect(0,'Toutes')">Toutes</option>
-                    <option @click="classSelect(classe.id,classe.nom+' ('+classe.effectif+ ' places)')" v-for="(classe, index) in classes" :key="index">{{ classe.nom }} ({{ classe.effectif }} places)</option>
-                </select>
-                <span>Salle:</span>
-                <select v-model="salle">
-                    <option @click="salleSelect(0,'Toutes')">Toutes</option>
-                    <option @click="salleSelect(salle.id,salle.nom+ ' ('+salle.capacite+ ' places)')" v-for="(salle, index) in salles" :key="index">{{ salle.nom }} ({{ salle.capacite }} places)</option>
-                </select>
-                <span>Enseignant:</span>
-                <select v-model="enseignant" >
-                    <option @click="ensSelect(0,'Tous')">Tous</option>
-                    <option @click="ensSelect(enseignant.id,enseignant.nom)" v-for="(enseignant, index) in enseignants" :key="index" >{{ enseignant.nom }}</option>
-                </select>
-            </div>
-            <div class="sceanceButton">
-                <a class="boutton" @click="getSceance1('ajouter',0)" >Ajouter</a>
-            </div>
-        </div>
-    </div>
 	<footer class="shadow bg-light text-center text-lg-start font-monospace fw-bold fixed-bottom">
 		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">© 2022 Copyright: <a class="text-dark" href="#">TheSavoir</a></div>
 	</footer>

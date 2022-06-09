@@ -15,7 +15,7 @@
                 <option :value="current.id+'@---&=@'+current.nom" v-for="(current, index) in currents" :key="index">{{ current.nom }}</option>
             </select>
         </div>
-        <section id="toPrint" style="width:1330px; text-align:center">
+        <section id="toPrint" style="width:1330px;padding-bottom:50px; text-align:center">
             <h2>{{ currentNom }} planning  {{annee}}/{{parseInt(annee)+1}}</h2>
             <div class="scheduleMain">
                 <div class="scDays">
@@ -38,8 +38,11 @@
                 />
             </div>
         </section>
-        <div @click="print" class="scPrintButton">PRINT</div>
+        <div @click="print" class="shadow text-white mt-5 me-5 bg-info scPrintButton">PRINT</div>
     </div>
+	<footer class="shadow bg-light text-center text-lg-start font-monospace fw-bold fixed-bottom">
+		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">© 2022 Copyright: <a class="text-dark" href="#">TheSavoir</a></div>
+	</footer>
 </template>
 <style src="./schedule.css">
 </style>
